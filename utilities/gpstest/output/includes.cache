@@ -1,0 +1,17 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\young\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\mbed_nano\\4.0.8\\cores\\arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\young\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\mbed_nano\\4.0.8\\variants\\NANO_RP2040_CONNECT"
+  },
+  {
+    "Sourcefile": "D:\\GitHub\\trackforceVerilog\\utilities\\gpstest\\output\\sketch\\gpstest.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]

@@ -1,6 +1,6 @@
 -------------------------------------
 | Tool Version : Vivado v.2023.2
-| Date         : Mon Dec  4 20:23:00 2023
+| Date         : Tue Dec 12 10:13:24 2023
 | Host         : BiliStation
 | Design       : design_1
 | Device       : xc7z020-clg400-1--

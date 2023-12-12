@@ -3,55 +3,49 @@
 
 # XDC: imports/digilent-xdc-master/Zybo-Z7-Master.xdc
 
-# Block Designs: bd/trackforce/trackforce.bd
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce || ORIG_REF_NAME==trackforce} -quiet] -quiet
+# Block Designs: bd/trackforce_block/trackforce_block.bd
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_block || ORIG_REF_NAME==trackforce_block} -quiet] -quiet
 
-# IP: bd/trackforce/ip/trackforce_processing_system7_0_0/trackforce_processing_system7_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_processing_system7_0_0 || ORIG_REF_NAME==trackforce_processing_system7_0_0} -quiet] -quiet
+# IP: bd/trackforce_block/ip/trackforce_block_processing_system7_0_0/trackforce_block_processing_system7_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_block_processing_system7_0_0 || ORIG_REF_NAME==trackforce_block_processing_system7_0_0} -quiet] -quiet
 
-# IP: bd/trackforce/ip/trackforce_xbar_0/trackforce_xbar_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_xbar_0 || ORIG_REF_NAME==trackforce_xbar_0} -quiet] -quiet
+# IP: bd/trackforce_block/ip/trackforce_block_top_0_0/trackforce_block_top_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_block_top_0_0 || ORIG_REF_NAME==trackforce_block_top_0_0} -quiet] -quiet
 
-# IP: bd/trackforce/ip/trackforce_ps7_0_axi_periph_0/trackforce_ps7_0_axi_periph_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_ps7_0_axi_periph_0 || ORIG_REF_NAME==trackforce_ps7_0_axi_periph_0} -quiet] -quiet
+# IP: bd/trackforce_block/ip/trackforce_block_axi_gpio_0_0/trackforce_block_axi_gpio_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_block_axi_gpio_0_0 || ORIG_REF_NAME==trackforce_block_axi_gpio_0_0} -quiet] -quiet
 
-# IP: bd/trackforce/ip/trackforce_rst_ps7_0_50M_0/trackforce_rst_ps7_0_50M_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_rst_ps7_0_50M_0 || ORIG_REF_NAME==trackforce_rst_ps7_0_50M_0} -quiet] -quiet
+# IP: bd/trackforce_block/ip/trackforce_block_axi_gpio_0_1/trackforce_block_axi_gpio_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_block_axi_gpio_0_1 || ORIG_REF_NAME==trackforce_block_axi_gpio_0_1} -quiet] -quiet
 
-# IP: bd/trackforce/ip/trackforce_axi_gpio_0_2/trackforce_axi_gpio_0_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_axi_gpio_0_2 || ORIG_REF_NAME==trackforce_axi_gpio_0_2} -quiet] -quiet
+# IP: bd/trackforce_block/ip/trackforce_block_axi_gpio_0_2/trackforce_block_axi_gpio_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_block_axi_gpio_0_2 || ORIG_REF_NAME==trackforce_block_axi_gpio_0_2} -quiet] -quiet
 
-# IP: bd/trackforce/ip/trackforce_axi_uartlite_0_0/trackforce_axi_uartlite_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_axi_uartlite_0_0 || ORIG_REF_NAME==trackforce_axi_uartlite_0_0} -quiet] -quiet
+# IP: bd/trackforce_block/ip/trackforce_block_xbar_0/trackforce_block_xbar_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_block_xbar_0 || ORIG_REF_NAME==trackforce_block_xbar_0} -quiet] -quiet
 
-# IP: bd/trackforce/ip/trackforce_axi_uartlite_0_1/trackforce_axi_uartlite_0_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_axi_uartlite_0_1 || ORIG_REF_NAME==trackforce_axi_uartlite_0_1} -quiet] -quiet
+# IP: bd/trackforce_block/ip/trackforce_block_auto_pc_0/trackforce_block_auto_pc_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_block_auto_pc_0 || ORIG_REF_NAME==trackforce_block_auto_pc_0} -quiet] -quiet
 
-# IP: bd/trackforce/ip/trackforce_axi_gpio_0_3/trackforce_axi_gpio_0_3.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_axi_gpio_0_3 || ORIG_REF_NAME==trackforce_axi_gpio_0_3} -quiet] -quiet
+# IP: bd/trackforce_block/ip/trackforce_block_ps7_0_axi_periph_0/trackforce_block_ps7_0_axi_periph_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_block_ps7_0_axi_periph_0 || ORIG_REF_NAME==trackforce_block_ps7_0_axi_periph_0} -quiet] -quiet
 
-# IP: bd/trackforce/ip/trackforce_axi_gpio_0_4/trackforce_axi_gpio_0_4.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_axi_gpio_0_4 || ORIG_REF_NAME==trackforce_axi_gpio_0_4} -quiet] -quiet
+# IP: bd/trackforce_block/ip/trackforce_block_rst_ps7_0_50M_0/trackforce_block_rst_ps7_0_50M_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_block_rst_ps7_0_50M_0 || ORIG_REF_NAME==trackforce_block_rst_ps7_0_50M_0} -quiet] -quiet
 
-# IP: bd/trackforce/ip/trackforce_axi_gpio_0_5/trackforce_axi_gpio_0_5.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_axi_gpio_0_5 || ORIG_REF_NAME==trackforce_axi_gpio_0_5} -quiet] -quiet
+# IP: bd/trackforce_block/ip/trackforce_block_axi_uartlite_0_0/trackforce_block_axi_uartlite_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_block_axi_uartlite_0_0 || ORIG_REF_NAME==trackforce_block_axi_uartlite_0_0} -quiet] -quiet
 
-# IP: bd/trackforce/ip/trackforce_axi_gpio_0_6/trackforce_axi_gpio_0_6.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_axi_gpio_0_6 || ORIG_REF_NAME==trackforce_axi_gpio_0_6} -quiet] -quiet
+# IP: bd/trackforce_block/ip/trackforce_block_axi_uartlite_0_1/trackforce_block_axi_uartlite_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_block_axi_uartlite_0_1 || ORIG_REF_NAME==trackforce_block_axi_uartlite_0_1} -quiet] -quiet
 
-# IP: bd/trackforce/ip/trackforce_axi_gpio_0_7/trackforce_axi_gpio_0_7.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_axi_gpio_0_7 || ORIG_REF_NAME==trackforce_axi_gpio_0_7} -quiet] -quiet
+# IP: bd/trackforce_block/ip/trackforce_block_axi_gpio_0_4/trackforce_block_axi_gpio_0_4.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_block_axi_gpio_0_4 || ORIG_REF_NAME==trackforce_block_axi_gpio_0_4} -quiet] -quiet
 
-# IP: bd/trackforce/ip/trackforce_axi_gpio_0_8/trackforce_axi_gpio_0_8.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_axi_gpio_0_8 || ORIG_REF_NAME==trackforce_axi_gpio_0_8} -quiet] -quiet
+# IP: bd/trackforce_block/ip/trackforce_block_axi_gpio_0_5/trackforce_block_axi_gpio_0_5.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_block_axi_gpio_0_5 || ORIG_REF_NAME==trackforce_block_axi_gpio_0_5} -quiet] -quiet
 
-# IP: bd/trackforce/ip/trackforce_top_0_0/trackforce_top_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_top_0_0 || ORIG_REF_NAME==trackforce_top_0_0} -quiet] -quiet
+# IP: bd/trackforce_block/ip/trackforce_block_axi_gpio_0_6/trackforce_block_axi_gpio_0_6.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_block_axi_gpio_0_6 || ORIG_REF_NAME==trackforce_block_axi_gpio_0_6} -quiet] -quiet
 
-# IP: bd/trackforce/ip/trackforce_axi_gpio_0_9/trackforce_axi_gpio_0_9.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_axi_gpio_0_9 || ORIG_REF_NAME==trackforce_axi_gpio_0_9} -quiet] -quiet
-
-# IP: bd/trackforce/ip/trackforce_auto_pc_0/trackforce_auto_pc_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==trackforce_auto_pc_0 || ORIG_REF_NAME==trackforce_auto_pc_0} -quiet] -quiet
-
-# XDC: d:/GitHub/trackforce/trackforce.vivado/trackforce.gen/sources_1/bd/trackforce/trackforce_ooc.xdc
+# XDC: d:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.gen/sources_1/bd/trackforce_block/trackforce_block_ooc.xdc

@@ -1,0 +1,11 @@
+verilog xil_defaultlib --include "C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" --include "../../../../trackforce.gen/sources_1/bd/trackforce_block/ipshared/ec67/hdl" --include "../../../../trackforce.gen/sources_1/bd/trackforce_block/ipshared/6b2b/hdl" \
+"../../../bd/trackforce_block/ip/trackforce_block_processing_system7_0_0/sim/trackforce_block_processing_system7_0_0.v" \
+"../../../bd/trackforce_block/ip/trackforce_block_top_0_0/sim/trackforce_block_top_0_0.v" \
+"../../../bd/trackforce_block/ip/trackforce_block_xbar_0/sim/trackforce_block_xbar_0.v" \
+"../../../bd/trackforce_block/ip/trackforce_block_auto_pc_0/sim/trackforce_block_auto_pc_0.v" \
+"../../../bd/trackforce_block/sim/trackforce_block.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

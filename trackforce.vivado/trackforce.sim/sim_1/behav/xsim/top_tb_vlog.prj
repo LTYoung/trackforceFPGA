@@ -1,0 +1,18 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../trackforce.gen/sources_1/bd/trackforce_block/ipshared/ec67/hdl" --include "../../../../trackforce.gen/sources_1/bd/trackforce_block/ipshared/6b2b/hdl" --include "C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+"../../../../trackforce.srcs/sources_1/new/rollingwindow.v" \
+"../../../../trackforce.srcs/sources_1/new/sevenSegAni.v" \
+"../../../../trackforce.srcs/sources_1/new/sevenSegCtl.v" \
+"../../../../trackforce.srcs/sources_1/new/sevenSegDir.v" \
+"../../../../trackforce.srcs/sources_1/new/sevenSegG.v" \
+"../../../../trackforce.srcs/sources_1/new/sevenSegVel.v" \
+"../../../../trackforce.srcs/sources_1/new/top.v" \
+
+sv xil_defaultlib  --include "../../../../trackforce.gen/sources_1/bd/trackforce_block/ipshared/ec67/hdl" --include "../../../../trackforce.gen/sources_1/bd/trackforce_block/ipshared/6b2b/hdl" --include "C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+"../../../../trackforce.srcs/sim_1/imports/new/top_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

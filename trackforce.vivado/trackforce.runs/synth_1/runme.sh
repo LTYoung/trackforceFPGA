@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/GitHub/trackforce/trackforce.vivado/trackforce.runs/synth_1'
+HD_PWD='D:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log trackforce_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source trackforce_wrapper.tcl
+EAStep vivado -log trackforce_block_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source trackforce_block_wrapper.tcl

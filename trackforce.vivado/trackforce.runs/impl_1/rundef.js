@@ -26,7 +26,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log trackforce_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source trackforce_wrapper.tcl -notrace" );
+         "-log trackforce_block_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source trackforce_block_wrapper.tcl -notrace" );
 
 
 

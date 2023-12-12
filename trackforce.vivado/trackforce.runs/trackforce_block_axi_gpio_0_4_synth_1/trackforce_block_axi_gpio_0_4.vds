@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Dec 11 18:42:29 2023
+# Process ID: 40188
+# Current directory: D:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.runs/trackforce_block_axi_gpio_0_4_synth_1
+# Command line: vivado.exe -log trackforce_block_axi_gpio_0_4.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source trackforce_block_axi_gpio_0_4.tcl
+# Log file: D:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.runs/trackforce_block_axi_gpio_0_4_synth_1/trackforce_block_axi_gpio_0_4.vds
+# Journal file: D:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.runs/trackforce_block_axi_gpio_0_4_synth_1\vivado.jou
+# Running On: BiliStation, OS: Windows, CPU Frequency: 4200 MHz, CPU Physical cores: 32, Host memory: 67870 MB
+#-----------------------------------------------------------
+source trackforce_block_axi_gpio_0_4.tcl -notrace
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: trackforce_block_axi_gpio_0_4
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 4c84d6175bdba389 to dir: D:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.runs/trackforce_block_axi_gpio_0_4_synth_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file d:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.cache/ip/2023.2/4/c/4c84d6175bdba389/trackforce_block_axi_gpio_0_5.dcp to D:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.runs/trackforce_block_axi_gpio_0_4_synth_1/trackforce_block_axi_gpio_0_4.dcp.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file d:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.cache/ip/2023.2/4/c/4c84d6175bdba389/trackforce_block_axi_gpio_0_5_sim_netlist.v to D:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.runs/trackforce_block_axi_gpio_0_4_synth_1/trackforce_block_axi_gpio_0_4_sim_netlist.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file d:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.cache/ip/2023.2/4/c/4c84d6175bdba389/trackforce_block_axi_gpio_0_5_sim_netlist.vhdl to D:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.runs/trackforce_block_axi_gpio_0_4_synth_1/trackforce_block_axi_gpio_0_4_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file d:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.cache/ip/2023.2/4/c/4c84d6175bdba389/trackforce_block_axi_gpio_0_5_stub.v to D:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.runs/trackforce_block_axi_gpio_0_4_synth_1/trackforce_block_axi_gpio_0_4_stub.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file d:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.cache/ip/2023.2/4/c/4c84d6175bdba389/trackforce_block_axi_gpio_0_5_stub.vhdl to D:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.runs/trackforce_block_axi_gpio_0_4_synth_1/trackforce_block_axi_gpio_0_4_stub.vhdl.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP trackforce_block_axi_gpio_0_4, cache-ID = 4c84d6175bdba389.
+INFO: [Common 17-206] Exiting Vivado at Mon Dec 11 18:42:36 2023...

@@ -1,3 +1,0 @@
-D:/GitHub/trackforce/trackforce.vitis/trackforce_plat/zynq_fsbl/build/CMakeFiles/fsbl.elf.dir
-D:/GitHub/trackforce/trackforce.vitis/trackforce_plat/zynq_fsbl/build/CMakeFiles/edit_cache.dir
-D:/GitHub/trackforce/trackforce.vitis/trackforce_plat/zynq_fsbl/build/CMakeFiles/rebuild_cache.dir

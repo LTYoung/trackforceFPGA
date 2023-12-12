@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/GitHub/trackforce/trackforce.vivado/trackforce.runs/trackforce_block_axi_gpio_0_2_synth_1'
+HD_PWD='D:/GitHub/trackforceVerilog/trackforce.vivado/trackforce.runs/trackforce_block_axi_gpio_0_2_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]D:\GitHub\trackforceVerilog\trackforce.vitis\platform\export\platform\sw\boot\fsbl.elf
+	D:\GitHub\trackforceVerilog\trackforce.vitis\app_component\_ide\bitstream\trackforce_block_wrapper.bit
+	D:\GitHub\trackforceVerilog\trackforce.vitis\app_component\build\app_component.elf
+}

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="top_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="162.760001 us"></ZoomEndTime>
+      <Cursor1Time time="61.087662 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="340"></NameColumnWidth>
+      <ValueColumnWidth column_width="90"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="82" />
+   <wvobject type="divider" fp_name="divider67">
+      <obj_property name="label">INTEREST</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_datain_w" type="array">
+      <obj_property name="ElementShortName">gps_datain_w[7:0]</obj_property>
+      <obj_property name="ObjectShortName">gps_datain_w[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_data_w" type="array">
+      <obj_property name="ElementShortName">gps_data_w[7:0]</obj_property>
+      <obj_property name="ObjectShortName">gps_data_w[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_window_data_o" type="array">
+      <obj_property name="ElementShortName">gps_window_data_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">gps_window_data_o[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_window_inst/average" type="array">
+      <obj_property name="ElementShortName">average[7:0]</obj_property>
+      <obj_property name="ObjectShortName">average[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_window_inst/window" type="array">
+      <obj_property name="ElementShortName">window[31:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">window[31:0][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_window_inst/valid_i" type="logic">
+      <obj_property name="ElementShortName">valid_i</obj_property>
+      <obj_property name="ObjectShortName">valid_i</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider79">
+      <obj_property name="label">GPS FIFO INTERNAL</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_fifo_inst/wr_en_i" type="logic">
+      <obj_property name="ElementShortName">wr_en_i</obj_property>
+      <obj_property name="ObjectShortName">wr_en_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_fifo_inst/wr_data_i" type="array">
+      <obj_property name="ElementShortName">wr_data_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_data_i[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_fifo_inst/rd_ready_i" type="logic">
+      <obj_property name="ElementShortName">rd_ready_i</obj_property>
+      <obj_property name="ObjectShortName">rd_ready_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_fifo_inst/rd_data_o" type="array">
+      <obj_property name="ElementShortName">rd_data_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_data_o[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider68">
+      <obj_property name="label">TB</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/clk_i" type="logic">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/rst_i" type="logic">
+      <obj_property name="ElementShortName">rst_i</obj_property>
+      <obj_property name="ObjectShortName">rst_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/sw_i" type="array">
+      <obj_property name="ElementShortName">sw_i[3:0]</obj_property>
+      <obj_property name="ObjectShortName">sw_i[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/gps_byte_i" type="array">
+      <obj_property name="ElementShortName">gps_byte_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">gps_byte_i[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/imu_x_i" type="array">
+      <obj_property name="ElementShortName">imu_x_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_x_i[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/imu_y_i" type="array">
+      <obj_property name="ElementShortName">imu_y_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_y_i[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/valid_i" type="array">
+      <obj_property name="ElementShortName">valid_i[1:0]</obj_property>
+      <obj_property name="ObjectShortName">valid_i[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/gps_vel_o" type="array">
+      <obj_property name="ElementShortName">gps_vel_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">gps_vel_o[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/gforce_x_o" type="array">
+      <obj_property name="ElementShortName">gforce_x_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">gforce_x_o[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/gforce_y_o" type="array">
+      <obj_property name="ElementShortName">gforce_y_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">gforce_y_o[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/jc" type="array">
+      <obj_property name="ElementShortName">jc[7:0]</obj_property>
+      <obj_property name="ObjectShortName">jc[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/jd" type="array">
+      <obj_property name="ElementShortName">jd[7:0]</obj_property>
+      <obj_property name="ObjectShortName">jd[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/je" type="array">
+      <obj_property name="ElementShortName">je[7:0]</obj_property>
+      <obj_property name="ObjectShortName">je[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/led" type="array">
+      <obj_property name="ElementShortName">led[3:0]</obj_property>
+      <obj_property name="ObjectShortName">led[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider18">
+      <obj_property name="label">DUT INTERNAL</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/clk_i" type="logic">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rst_i" type="logic">
+      <obj_property name="ElementShortName">rst_i</obj_property>
+      <obj_property name="ObjectShortName">rst_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/sw" type="array">
+      <obj_property name="ElementShortName">sw[3:0]</obj_property>
+      <obj_property name="ObjectShortName">sw[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_byte_i" type="array">
+      <obj_property name="ElementShortName">gps_byte_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">gps_byte_i[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imu_x_i" type="array">
+      <obj_property name="ElementShortName">imu_x_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_x_i[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imu_y_i" type="array">
+      <obj_property name="ElementShortName">imu_y_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_y_i[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/valid_i" type="array">
+      <obj_property name="ElementShortName">valid_i[1:0]</obj_property>
+      <obj_property name="ObjectShortName">valid_i[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/vel_o" type="array">
+      <obj_property name="ElementShortName">vel_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">vel_o[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/x_o" type="array">
+      <obj_property name="ElementShortName">x_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">x_o[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/y_o" type="array">
+      <obj_property name="ElementShortName">y_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">y_o[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/jc" type="array">
+      <obj_property name="ElementShortName">jc[7:0]</obj_property>
+      <obj_property name="ObjectShortName">jc[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/jd" type="array">
+      <obj_property name="ElementShortName">jd[7:0]</obj_property>
+      <obj_property name="ObjectShortName">jd[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/je" type="array">
+      <obj_property name="ElementShortName">je[7:0]</obj_property>
+      <obj_property name="ObjectShortName">je[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/led" type="array">
+      <obj_property name="ElementShortName">led[3:0]</obj_property>
+      <obj_property name="ObjectShortName">led[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/test" type="array">
+      <obj_property name="ElementShortName">test[0:0]</obj_property>
+      <obj_property name="ObjectShortName">test[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_datain_w" type="array">
+      <obj_property name="ElementShortName">gps_datain_w[7:0]</obj_property>
+      <obj_property name="ObjectShortName">gps_datain_w[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imux_datain_w" type="array">
+      <obj_property name="ElementShortName">imux_datain_w[7:0]</obj_property>
+      <obj_property name="ObjectShortName">imux_datain_w[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imuy_datain_w" type="array">
+      <obj_property name="ElementShortName">imuy_datain_w[7:0]</obj_property>
+      <obj_property name="ObjectShortName">imuy_datain_w[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_test_data_w" type="array">
+      <obj_property name="ElementShortName">gps_test_data_w[7:0]</obj_property>
+      <obj_property name="ObjectShortName">gps_test_data_w[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imux_test_data_w" type="array">
+      <obj_property name="ElementShortName">imux_test_data_w[7:0]</obj_property>
+      <obj_property name="ObjectShortName">imux_test_data_w[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imuy_test_data_w" type="array">
+      <obj_property name="ElementShortName">imuy_test_data_w[7:0]</obj_property>
+      <obj_property name="ObjectShortName">imuy_test_data_w[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_data_valid_o" type="array">
+      <obj_property name="ElementShortName">gps_data_valid_o[0:0]</obj_property>
+      <obj_property name="ObjectShortName">gps_data_valid_o[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_fifo_ready_o" type="array">
+      <obj_property name="ElementShortName">gps_fifo_ready_o[0:0]</obj_property>
+      <obj_property name="ObjectShortName">gps_fifo_ready_o[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imu_x_data_valid_o" type="array">
+      <obj_property name="ElementShortName">imu_x_data_valid_o[0:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_x_data_valid_o[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imu_x_fifo_ready_o" type="array">
+      <obj_property name="ElementShortName">imu_x_fifo_ready_o[0:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_x_fifo_ready_o[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imu_y_data_valid_o" type="array">
+      <obj_property name="ElementShortName">imu_y_data_valid_o[0:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_y_data_valid_o[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imu_y_fifo_ready_o" type="array">
+      <obj_property name="ElementShortName">imu_y_fifo_ready_o[0:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_y_fifo_ready_o[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_data_w" type="array">
+      <obj_property name="ElementShortName">gps_data_w[7:0]</obj_property>
+      <obj_property name="ObjectShortName">gps_data_w[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_window_ready_o" type="array">
+      <obj_property name="ElementShortName">gps_window_ready_o[0:0]</obj_property>
+      <obj_property name="ObjectShortName">gps_window_ready_o[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_window_valid_o" type="array">
+      <obj_property name="ElementShortName">gps_window_valid_o[0:0]</obj_property>
+      <obj_property name="ObjectShortName">gps_window_valid_o[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_window_data_o" type="array">
+      <obj_property name="ElementShortName">gps_window_data_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">gps_window_data_o[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imu_x_data_w" type="array">
+      <obj_property name="ElementShortName">imu_x_data_w[7:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_x_data_w[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imu_x_window_ready_o" type="array">
+      <obj_property name="ElementShortName">imu_x_window_ready_o[0:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_x_window_ready_o[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imu_x_window_valid_o" type="array">
+      <obj_property name="ElementShortName">imu_x_window_valid_o[0:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_x_window_valid_o[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imu_x_window_data_o" type="array">
+      <obj_property name="ElementShortName">imu_x_window_data_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_x_window_data_o[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imu_y_data_w" type="array">
+      <obj_property name="ElementShortName">imu_y_data_w[7:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_y_data_w[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imu_y_window_ready_o" type="array">
+      <obj_property name="ElementShortName">imu_y_window_ready_o[0:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_y_window_ready_o[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imu_y_window_valid_o" type="array">
+      <obj_property name="ElementShortName">imu_y_window_valid_o[0:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_y_window_valid_o[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/imu_y_window_data_o" type="array">
+      <obj_property name="ElementShortName">imu_y_window_data_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">imu_y_window_data_o[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/seg_standby_w" type="array">
+      <obj_property name="ElementShortName">seg_standby_w[0:0]</obj_property>
+      <obj_property name="ObjectShortName">seg_standby_w[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/segVel_w" type="array">
+      <obj_property name="ElementShortName">segVel_w[7:0]</obj_property>
+      <obj_property name="ObjectShortName">segVel_w[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/segG_w" type="array">
+      <obj_property name="ElementShortName">segG_w[7:0]</obj_property>
+      <obj_property name="ObjectShortName">segG_w[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/segDir_w" type="array">
+      <obj_property name="ElementShortName">segDir_w[7:0]</obj_property>
+      <obj_property name="ObjectShortName">segDir_w[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/CLK_SPEED" type="array">
+      <obj_property name="ElementShortName">CLK_SPEED[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CLK_SPEED[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider81">
+      <obj_property name="label">GPS LFSR INTERNAL</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_lfsr_inst/clk_i" type="logic">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_lfsr_inst/rst_i" type="logic">
+      <obj_property name="ElementShortName">rst_i</obj_property>
+      <obj_property name="ObjectShortName">rst_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_lfsr_inst/data_o" type="array">
+      <obj_property name="ElementShortName">data_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_o[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_lfsr_inst/lfsr_reg" type="array">
+      <obj_property name="ElementShortName">lfsr_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">lfsr_reg[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_lfsr_inst/next_lfsr_reg" type="array">
+      <obj_property name="ElementShortName">next_lfsr_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">next_lfsr_reg[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_lfsr_inst/counter" type="array">
+      <obj_property name="ElementShortName">counter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_lfsr_inst/DATA_WIDTH" type="array">
+      <obj_property name="ElementShortName">DATA_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_lfsr_inst/MAX" type="array">
+      <obj_property name="ElementShortName">MAX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MAX[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/gps_lfsr_inst/CLK_SPEED" type="array">
+      <obj_property name="ElementShortName">CLK_SPEED[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CLK_SPEED[31:0]</obj_property>
+   </wvobject>
+</wave_config>
