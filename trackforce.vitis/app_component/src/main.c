@@ -21,12 +21,22 @@
 #define GPIO_TOP_Y_AXI_BASEADDRESS XPAR_AXI_GPIO_TOP_Y_BASEADDR
 
 #define GPS_BUFFER_SIZE 2048
-#define IMU_BUFFER_SIZE 10
+#define IMU_BUFFER_SIZE 128
 
 XUartLite UGPS, UIMU;
 XGpio GGPS, GIMUX, GIMUY, GVALID, GTopVel, GTopX, GTopY;
 
+int GPSRecvCount = 0;
+int imuRecvCount = 0;
+char GPSRecvBuffer[GPS_BUFFER_SIZE];
+char IMURecvBuffer[IMU_BUFFER_SIZE];
+
+int speedkmh, Gx, Gy;
+unsigned char Gxu8, Gyu8;
+
 int extractIntegerPart(char **str, int *isNegative);
+void parseGPSData(char *GPSRecvBuffer, int *speedkmh);
+void parseIMUData(char *IMURecvBuffer);
 
 int main(void)
 
@@ -47,8 +57,8 @@ int main(void)
 
   if (GPSUartStatus != XST_SUCCESS || IMUUartStatus != XST_SUCCESS ||
       GGPSStatus != XST_SUCCESS || GIMUXStatus != XST_SUCCESS ||
-      GIMUYStatus != XST_SUCCESS || GTopVelStatus != XST_SUCCESS || GTopXStatus != XST_SUCCESS || GTopYStatus != XST_SUCCESS)
-  {
+      GIMUYStatus != XST_SUCCESS || GTopVelStatus != XST_SUCCESS ||
+      GTopXStatus != XST_SUCCESS || GTopYStatus != XST_SUCCESS) {
     xil_printf("Initialization failed\n\r");
     return XST_FAILURE;
   }
@@ -58,8 +68,7 @@ int main(void)
   GPSUartStatus = XUartLite_SelfTest(&UGPS);
   IMUUartStatus = XUartLite_SelfTest(&UIMU);
 
-  if (GPSUartStatus != XST_SUCCESS || IMUUartStatus != XST_SUCCESS)
-  {
+  if (GPSUartStatus != XST_SUCCESS || IMUUartStatus != XST_SUCCESS) {
     xil_printf("UARTLite self test failed\n\r");
     return XST_FAILURE;
   }
@@ -74,8 +83,8 @@ int main(void)
   GTopYStatus = XGpio_SelfTest(&GTopY);
 
   if (GGPSStatus != XST_SUCCESS || GIMUXStatus != XST_SUCCESS ||
-      GIMUYStatus != XST_SUCCESS || GTopVelStatus != XST_SUCCESS || GTopXStatus != XST_SUCCESS || GTopYStatus != XST_SUCCESS)
-  {
+      GIMUYStatus != XST_SUCCESS || GTopVelStatus != XST_SUCCESS ||
+      GTopXStatus != XST_SUCCESS || GTopYStatus != XST_SUCCESS) {
     xil_printf("GPIO self test failed\n\r");
     return XST_FAILURE;
   }
@@ -92,8 +101,7 @@ int main(void)
 
   // GPIO tests
   xil_printf("GPIO tests\r\n");
-  for (int i = 0; i < 12; i++)
-  {
+  for (int i = 0; i < 12; i++) {
     XGpio_DiscreteWrite(&GGPS, 1, i);
     XGpio_DiscreteWrite(&GIMUX, 1, i);
     XGpio_DiscreteWrite(&GIMUY, 1, i);
@@ -101,14 +109,30 @@ int main(void)
     xil_printf("GIMUX: %d\r\n", XGpio_DiscreteRead(&GIMUX, 1));
     xil_printf("GIMUY: %d\r\n", XGpio_DiscreteRead(&GIMUY, 1));
     // delay a bit
-    for (int j = 0; j < 50000000; j++)
-    {
+    for (int j = 0; j < 50000000; j++) {
       ;
     }
   }
   xil_printf("Done GPIO tests\r\n");
 
-  // Flush and send 0 to all GPIOs
+  // System tests
+  // ------------------------------------------------------------------ Populate
+  // Buffers with test data and send to PL with parsing
+
+  char GPSRecvBufferTest[GPS_BUFFER_SIZE];
+  char IMURecvBufferTest[IMU_BUFFER_SIZE];
+  int GPSRecvCountTest = 0;
+  int imuRecvCountTest = 0;
+
+  int speedkmhTest, GxTest, GyTest;
+  unsigned char Gxu8Test, Gyu8Test;
+
+  // GPS test
+  // Populate buffer
+
+  // End of System tests
+  // ----------------------------------------------------------- Flush and send
+  // 0 to all GPIOs
   XGpio_DiscreteWrite(&GGPS, 1, 0x0000000);
   XGpio_DiscreteWrite(&GIMUX, 1, 0x0000000);
   XGpio_DiscreteWrite(&GIMUY, 1, 0x0000000);
@@ -117,103 +141,25 @@ int main(void)
 
   // read GPS uart and print buffer to console
   xil_printf("Reading GPS uart\r\n");
-  int GPSRecvCount = 0;
-  int imuRecvCount = 0;
-  char GPSRecvBuffer[GPS_BUFFER_SIZE];
-  char IMURecvBuffer[IMU_BUFFER_SIZE];
 
-  int speedkmh, Gx, Gy;
-  unsigned char Gxu8, Gyu8;
-
-  while (1)
-  {
-    // Receive GPS uart until buffer is full
-    while (GPSRecvCount < GPS_BUFFER_SIZE)
-    {
-      GPSRecvCount += XUartLite_Recv(&UGPS, GPSRecvBuffer + GPSRecvCount,
-                                     GPS_BUFFER_SIZE - GPSRecvCount);
-    }
-    while (imuRecvCount < IMU_BUFFER_SIZE)
-    {
+  while (1) {
+    while (imuRecvCount < IMU_BUFFER_SIZE) {
       imuRecvCount += XUartLite_Recv(&UIMU, IMURecvBuffer + imuRecvCount,
                                      IMU_BUFFER_SIZE - imuRecvCount);
     }
-
-    // GPS parsing
-    // printout to console
-    // xil_printf("GPSRecvBuffer: %s\r\n", GPSRecvBuffer);
-    char *vtgMessage = strstr(GPSRecvBuffer, "$GNVTG");
-    if (vtgMessage != NULL)
-    {
-      // print out VTG message
-      // xil_printf("VTG: %s\r\n", vtgMessage);
-      char *token = strtok(vtgMessage, ",");
-      int field = 0;
-      while (token != NULL)
-      {
-        field++;
-        if (field == 7)
-        {
-          speedkmh = atoi(token);
-          break;
-        }
-        token = strtok(NULL, ",");
-      }
-      xil_printf("--------GPS UART Parser--------\r\n");
-      xil_printf("Speed: %d\r\n", speedkmh);
-
-      // convert speed to u8 to be sent to GPIO
-      u8 speedkmhu8 = (u8)speedkmh;
-      XGpio_DiscreteWrite(&GGPS, 1, speedkmhu8);
+    // Receive GPS uart until buffer is full
+    while (GPSRecvCount < GPS_BUFFER_SIZE) {
+      GPSRecvCount += XUartLite_Recv(&UGPS, GPSRecvBuffer + GPSRecvCount,
+                                     GPS_BUFFER_SIZE - GPSRecvCount);
     }
+
+    // Call the parseGPSData function
+    parseGPSData(GPSRecvBuffer, &speedkmh);
+    parseIMUData(IMURecvBuffer);
+
     memset(GPSRecvBuffer, 0, GPS_BUFFER_SIZE);
-    GPSRecvCount = 0;
-
-    // IMU parsing
-    // IMU is in format of "$IMU,Gx,Gy\r\n"
-    // parse Gx and Gy
-
-    if (strstr(IMURecvBuffer, "$IMU,") != NULL)
-    {
-      char *str = strtok(IMURecvBuffer, ",");
-      for (int i = 0; i < 2; i++)
-      {
-        str = strtok(NULL, ",\r\n");
-        if (str)
-        {
-          int isNeg = (*str == '-') ? 1 : 0;
-          int intVal = extractIntegerPart(&str, &isNeg);
-          int decimalVal = 0;
-          if (*str == '.')
-          {
-            str++;
-            if (*str >= '0' && *str <= '9')
-            {
-              decimalVal = *str - '0';
-            }
-          }
-          int finalVal = intVal * 10 + decimalVal;
-          if (isNeg)
-          {
-            finalVal = -finalVal;
-          }
-          unsigned char valueu8 = (finalVal & 0x7F) | (isNeg << 7);
-          if (i == 0)
-          {
-            Gxu8 = valueu8;
-          }
-          else
-          {
-            Gyu8 = valueu8;
-          }
-        }
-      }
-    }
-
-    XGpio_DiscreteWrite(&GIMUX, 1, Gxu8);
-    XGpio_DiscreteWrite(&GIMUY, 1, Gyu8);
-
     memset(IMURecvBuffer, 0, IMU_BUFFER_SIZE);
+    GPSRecvCount = 0;
     imuRecvCount = 0;
 
     xil_printf("--------IMU UART Parser--------\r\n");
@@ -235,25 +181,79 @@ int main(void)
   xil_printf("EoF reached, exit\r\n");
 }
 
-int extractIntegerPart(char **str, int *isNegative)
-{
+int extractIntegerPart(char **str, int *isNegative) {
   int num = 0;
 
-  if (**str == '-')
-  {
+  if (**str == '-') {
     *isNegative = 1;
     (*str)++;
-  }
-  else
-  {
+  } else {
     *isNegative = 0;
   }
 
-  while (**str >= '0' && **str <= '9')
-  {
+  while (**str >= '0' && **str <= '9') {
     num = num * 10 + (**str - '0');
     (*str)++;
   }
 
   return num;
+}
+
+void parseGPSData(char *GPSRecvBuffer, int *speedkmh) {
+  // GPS parsing
+  char *vtgMessage = strstr(GPSRecvBuffer, "$GNVTG");
+  if (vtgMessage != NULL) {
+    char *token = strtok(vtgMessage, ",");
+    int field = 0;
+    while (token != NULL) {
+      field++;
+      if (field == 7) {
+        *speedkmh = atoi(token);
+        break;
+      }
+      token = strtok(NULL, ",");
+    }
+    xil_printf("--------GPS UART Parser--------\r\n");
+    xil_printf("Speed: %d\r\n", *speedkmh);
+
+    // convert speed to u8 to be sent to GPIO
+    u8 speedkmhu8 = (u8)(*speedkmh);
+    XGpio_DiscreteWrite(&GGPS, 1, speedkmhu8);
+  }
+}
+
+void parseIMUData(char *IMURecvBuffer) {
+  // IMU parsing
+  // IMU is in format of "$IMU,Gx,Gy\r\n"
+  // parse Gx and Gy
+
+  if (strstr(IMURecvBuffer, "$IMU,") != NULL) {
+    char *str = strtok(IMURecvBuffer, ",");
+    for (int i = 0; i < 2; i++) {
+      str = strtok(NULL, ",\r\n");
+      if (str) {
+        int isNeg = (*str == '-') ? 1 : 0;
+        int intVal = extractIntegerPart(&str, &isNeg);
+        int decimalVal = 0;
+        if (*str == '.') {
+          str++;
+          if (*str >= '0' && *str <= '9') {
+            decimalVal = *str - '0';
+          }
+        }
+        int finalVal = intVal * 10 + decimalVal;
+        if (isNeg) {
+          finalVal = -finalVal;
+        }
+        unsigned char valueu8 = (finalVal & 0x7F) | (isNeg << 7);
+        if (i == 0) {
+          Gxu8 = valueu8;
+        } else {
+          Gyu8 = valueu8;
+        }
+      }
+    }
+  }
+  XGpio_DiscreteWrite(&GIMUX, 1, Gxu8);
+  XGpio_DiscreteWrite(&GIMUY, 1, Gyu8);
 }
